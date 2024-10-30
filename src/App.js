@@ -1,7 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {useState} from 'react';
+
 
 function App() {
+
+  const[weight, setWeight] = useState(0);
+  const[height, setHeight] = useState(0);
+
   return (
     <div className="App">
       <div className='container'>
