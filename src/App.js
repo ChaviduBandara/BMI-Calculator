@@ -20,6 +20,10 @@ function App() {
   }
 
   const calBmi = (event) => {
+
+    // ***To stop reloading
+    event.preventDefault();
+
     if(weight === 0 || height === 0){
       alert('Please enter a valid weight and height');
     }
@@ -39,6 +43,11 @@ function App() {
         setMessage('You are over-Weight!');
       }
     }
+  }
+
+  // reload function
+  const reload = () => {
+    window.location.reload();
   }
 
   return (
@@ -67,7 +76,7 @@ function App() {
 
           <div>
             <button className='btn' type='submit'>Submit</button>
-            {/* <button className='btn btn-outline' onChange={reload} type='submit'>Reload</button> */}
+            <button className='btn btn-outline' onChange={reload} type='submit'>Reload</button>
           </div>
 
           <div className='center'>
