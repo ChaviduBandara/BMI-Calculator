@@ -10,6 +10,7 @@ function App() {
   const[bmi, setBmi] = useState('');
   const[message, setMessage] = useState('');
 
+
   const handleWeightChange = (event) => {
     setWeight(event.target.value)
   } 
@@ -18,11 +19,33 @@ function App() {
     setHeight(event.target.value)
   }
 
+  const calBmi = (event) => {
+    if(weight === 0 || height === 0){
+      alert('Please enter a valid weight and height');
+    }
+
+    else{
+      let bmi = (weight / (height*height)*703);
+      setBmi(bmi.toFixed(1));  // rounded to one decimal point
+
+      if(bmi<25){
+        setMessage('You are under-weight!');
+      }
+      else if(bmi>=25 && bmi<30){
+        setMessage('You are a healthy weight!');
+      }
+
+      else{
+        setMessage('You are over-Weight!');
+      }
+    }
+  }
+
   return (
     <div className="App">
       <div className='container'>
         <h2>BMI Calculator</h2>
-        <form>
+        <form onSubmit={calBmi}>
           <div>
             <label>Weight (kg)</label>
             <input 
