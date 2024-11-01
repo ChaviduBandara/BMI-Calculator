@@ -59,7 +59,7 @@ function App() {
             <label>Weight (kg)</label>
             <input 
               type='text' 
-              placeholder='Enter the weight' 
+              placeholder=' Enter the weight' 
               value={weight}
               onChange={handleWeightChange}
             />
@@ -68,15 +68,15 @@ function App() {
             <label>Height (cm)</label>
             <input 
               type='text' 
-              placeholder='Enter the height' 
+              placeholder=' Enter the height' 
               value={height}
               onChange={handleHeightChange}
             />
           </div>
 
-          <div>
-            <button className='btn' type='submit'>Submit</button>
-            <button className='btn btn-outline' onChange={reload} type='submit'>Reload</button>
+          <div className='buttons'>
+            <button className='btn btn-submit' type='submit'>Submit</button>
+            <button className='btn btn-reload' onClick={reload} type='submit'>Reload</button>
           </div>
 
           <div className='center'>
